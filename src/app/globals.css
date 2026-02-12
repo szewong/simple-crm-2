@@ -1,0 +1,320 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-subtle: var(--background-subtle);
+  --color-background-muted: var(--background-muted);
+  --color-background-inset: var(--background-inset);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-destructive: var(--destructive);
+  --color-destructive-muted: var(--destructive-muted);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-muted: var(--primary-muted);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-success: var(--success);
+  --color-success-muted: var(--success-muted);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-muted: var(--warning-muted);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-muted: var(--info-muted);
+  --color-info-foreground: var(--info-foreground);
+  --color-stage-lead: var(--stage-lead);
+  --color-stage-qualified: var(--stage-qualified);
+  --color-stage-proposal: var(--stage-proposal);
+  --color-stage-negotiation: var(--stage-negotiation);
+  --color-stage-won: var(--stage-won);
+  --color-stage-lost: var(--stage-lost);
+  --color-tag-blue-bg: var(--tag-blue-bg);
+  --color-tag-blue-text: var(--tag-blue-text);
+  --color-tag-green-bg: var(--tag-green-bg);
+  --color-tag-green-text: var(--tag-green-text);
+  --color-tag-purple-bg: var(--tag-purple-bg);
+  --color-tag-purple-text: var(--tag-purple-text);
+  --color-tag-amber-bg: var(--tag-amber-bg);
+  --color-tag-amber-text: var(--tag-amber-text);
+  --color-tag-rose-bg: var(--tag-rose-bg);
+  --color-tag-rose-text: var(--tag-rose-text);
+  --color-tag-cyan-bg: var(--tag-cyan-bg);
+  --color-tag-cyan-text: var(--tag-cyan-text);
+  --color-tag-orange-bg: var(--tag-orange-bg);
+  --color-tag-orange-text: var(--tag-orange-text);
+  --color-tag-gray-bg: var(--tag-gray-bg);
+  --color-tag-gray-text: var(--tag-gray-text);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Core Colors */
+  --background: hsl(0 0% 100%);
+  --background-subtle: hsl(220 14% 96%);
+  --background-muted: hsl(220 13% 91%);
+  --background-inset: hsl(220 14% 96%);
+
+  --foreground: hsl(224 71% 4%);
+  --foreground-muted: hsl(220 9% 46%);
+  --foreground-subtle: hsl(220 9% 63%);
+
+  --border: hsl(220 13% 91%);
+  --border-strong: hsl(220 9% 78%);
+  --input: hsl(220 13% 91%);
+  --ring: hsl(221 83% 53%);
+
+  /* Brand / Primary */
+  --primary: hsl(221 83% 53%);
+  --primary-hover: hsl(221 83% 47%);
+  --primary-foreground: hsl(0 0% 100%);
+  --primary-muted: hsl(221 83% 95%);
+
+  /* Secondary */
+  --secondary: hsl(220 14% 96%);
+  --secondary-foreground: hsl(224 71% 4%);
+
+  /* Muted */
+  --muted: hsl(220 14% 96%);
+  --muted-foreground: hsl(220 9% 46%);
+
+  /* Accent */
+  --accent: hsl(220 14% 96%);
+  --accent-foreground: hsl(224 71% 4%);
+
+  /* Card / Popover */
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(224 71% 4%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(224 71% 4%);
+
+  /* Semantic: Success */
+  --success: hsl(142 71% 45%);
+  --success-muted: hsl(142 71% 95%);
+  --success-foreground: hsl(142 71% 25%);
+
+  /* Semantic: Warning */
+  --warning: hsl(38 92% 50%);
+  --warning-muted: hsl(38 92% 95%);
+  --warning-foreground: hsl(38 92% 30%);
+
+  /* Semantic: Destructive / Error */
+  --destructive: hsl(0 84% 60%);
+  --destructive-muted: hsl(0 84% 95%);
+  --destructive-foreground: hsl(0 84% 30%);
+
+  /* Semantic: Info */
+  --info: hsl(199 89% 48%);
+  --info-muted: hsl(199 89% 95%);
+  --info-foreground: hsl(199 89% 28%);
+
+  /* Deal Stage Colors */
+  --stage-lead: hsl(220 14% 60%);
+  --stage-qualified: hsl(199 89% 48%);
+  --stage-proposal: hsl(262 83% 58%);
+  --stage-negotiation: hsl(38 92% 50%);
+  --stage-won: hsl(142 71% 45%);
+  --stage-lost: hsl(0 84% 60%);
+
+  /* Tag Colors */
+  --tag-blue-bg: #DBEAFE;
+  --tag-blue-text: #1E40AF;
+  --tag-green-bg: #DCFCE7;
+  --tag-green-text: #166534;
+  --tag-purple-bg: #F3E8FF;
+  --tag-purple-text: #6B21A8;
+  --tag-amber-bg: #FEF3C7;
+  --tag-amber-text: #92400E;
+  --tag-rose-bg: #FFE4E6;
+  --tag-rose-text: #9F1239;
+  --tag-cyan-bg: #CFFAFE;
+  --tag-cyan-text: #155E75;
+  --tag-orange-bg: #FFEDD5;
+  --tag-orange-text: #9A3412;
+  --tag-gray-bg: #F3F4F6;
+  --tag-gray-text: #374151;
+
+  /* Chart Colors */
+  --chart-1: hsl(221 83% 53%);
+  --chart-2: hsl(142 71% 45%);
+  --chart-3: hsl(262 83% 58%);
+  --chart-4: hsl(38 92% 50%);
+  --chart-5: hsl(0 84% 60%);
+
+  /* Sidebar */
+  --sidebar: hsl(0 0% 100%);
+  --sidebar-foreground: hsl(224 71% 4%);
+  --sidebar-primary: hsl(221 83% 53%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(220 14% 96%);
+  --sidebar-accent-foreground: hsl(224 71% 4%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(221 83% 53%);
+}
+
+.dark {
+  /* Core Colors */
+  --background: hsl(224 71% 4%);
+  --background-subtle: hsl(220 15% 10%);
+  --background-muted: hsl(220 14% 14%);
+  --background-inset: hsl(220 15% 8%);
+
+  --foreground: hsl(0 0% 95%);
+  --foreground-muted: hsl(220 9% 60%);
+  --foreground-subtle: hsl(220 9% 46%);
+
+  --border: hsl(220 14% 18%);
+  --border-strong: hsl(220 14% 25%);
+  --input: hsl(220 14% 18%);
+  --ring: hsl(221 83% 58%);
+
+  /* Brand / Primary */
+  --primary: hsl(221 83% 58%);
+  --primary-hover: hsl(221 83% 65%);
+  --primary-foreground: hsl(0 0% 100%);
+  --primary-muted: hsl(221 83% 12%);
+
+  /* Secondary */
+  --secondary: hsl(220 14% 14%);
+  --secondary-foreground: hsl(0 0% 95%);
+
+  /* Muted */
+  --muted: hsl(220 14% 14%);
+  --muted-foreground: hsl(220 9% 60%);
+
+  /* Accent */
+  --accent: hsl(220 14% 14%);
+  --accent-foreground: hsl(0 0% 95%);
+
+  /* Card / Popover */
+  --card: hsl(220 15% 10%);
+  --card-foreground: hsl(0 0% 95%);
+  --popover: hsl(220 15% 10%);
+  --popover-foreground: hsl(0 0% 95%);
+
+  /* Semantic: Success */
+  --success: hsl(142 64% 40%);
+  --success-muted: hsl(142 40% 10%);
+  --success-foreground: hsl(142 71% 70%);
+
+  /* Semantic: Warning */
+  --warning: hsl(38 82% 45%);
+  --warning-muted: hsl(38 40% 10%);
+  --warning-foreground: hsl(38 92% 70%);
+
+  /* Semantic: Destructive / Error */
+  --destructive: hsl(0 74% 55%);
+  --destructive-muted: hsl(0 40% 10%);
+  --destructive-foreground: hsl(0 84% 75%);
+
+  /* Semantic: Info */
+  --info: hsl(199 79% 43%);
+  --info-muted: hsl(199 40% 10%);
+  --info-foreground: hsl(199 89% 70%);
+
+  /* Deal Stage Colors */
+  --stage-lead: hsl(220 14% 50%);
+  --stage-qualified: hsl(199 79% 43%);
+  --stage-proposal: hsl(262 73% 53%);
+  --stage-negotiation: hsl(38 82% 45%);
+  --stage-won: hsl(142 64% 40%);
+  --stage-lost: hsl(0 74% 55%);
+
+  /* Tag Colors (darkened for dark mode) */
+  --tag-blue-bg: hsl(221 50% 15%);
+  --tag-blue-text: hsl(221 80% 70%);
+  --tag-green-bg: hsl(142 40% 12%);
+  --tag-green-text: hsl(142 60% 65%);
+  --tag-purple-bg: hsl(262 40% 15%);
+  --tag-purple-text: hsl(262 70% 72%);
+  --tag-amber-bg: hsl(38 40% 13%);
+  --tag-amber-text: hsl(38 80% 65%);
+  --tag-rose-bg: hsl(350 40% 13%);
+  --tag-rose-text: hsl(350 70% 70%);
+  --tag-cyan-bg: hsl(199 40% 12%);
+  --tag-cyan-text: hsl(199 70% 65%);
+  --tag-orange-bg: hsl(24 40% 13%);
+  --tag-orange-text: hsl(24 80% 65%);
+  --tag-gray-bg: hsl(220 14% 14%);
+  --tag-gray-text: hsl(220 9% 70%);
+
+  /* Chart Colors */
+  --chart-1: hsl(221 83% 58%);
+  --chart-2: hsl(142 64% 40%);
+  --chart-3: hsl(262 73% 53%);
+  --chart-4: hsl(38 82% 45%);
+  --chart-5: hsl(0 74% 55%);
+
+  /* Sidebar */
+  --sidebar: hsl(220 15% 8%);
+  --sidebar-foreground: hsl(0 0% 95%);
+  --sidebar-primary: hsl(221 83% 58%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(220 14% 14%);
+  --sidebar-accent-foreground: hsl(0 0% 95%);
+  --sidebar-border: hsl(220 14% 18%);
+  --sidebar-ring: hsl(221 83% 58%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
